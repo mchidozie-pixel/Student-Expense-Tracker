@@ -1,0 +1,109 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#fff}svg{display:block}</style>
+</head><body>
+<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg"
+     font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f4c3a"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="780" fill="#ffffff"/>
+
+  <!-- PHONE -->
+  <rect x="40" y="80" width="240" height="600" rx="36" fill="#ffffff" stroke="#c9d6cf" stroke-width="2.5"/>
+  <rect x="53" y="93" width="214" height="574" rx="26" fill="#f6faf8"/>
+  <rect x="126" y="104" width="68" height="8" rx="4" fill="#c9d6cf"/>
+
+  <text x="160" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#0d1b16">ALU Expense</text>
+  <text x="160" y="182" text-anchor="middle" font-size="17" fill="#5f6b66">installed on the phone</text>
+
+  <rect x="68" y="204" width="184" height="66" rx="12" fill="#ffffff" stroke="#dbe6e0"/>
+  <text x="82" y="228" font-size="16" fill="#5f6b66">Spent this month</text>
+  <text x="82" y="256" font-size="21" font-weight="800" fill="#0f4c3a">72,500 RWF</text>
+
+  <rect x="68" y="284" width="184" height="46" rx="12" fill="#0f4c3a"/>
+  <text x="160" y="313" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">+ Record</text>
+
+  <rect x="68" y="344" width="184" height="52" rx="12" fill="#ffffff" stroke="#dbe6e0"/>
+  <text x="82" y="366" font-size="15" fill="#5f6b66">Lunch · Food</text>
+  <text x="82" y="385" font-size="16" font-weight="700" fill="#0d1b16">2,500 RWF</text>
+
+  <rect x="68" y="408" width="184" height="52" rx="12" fill="#ffffff" stroke="#dbe6e0"/>
+  <text x="82" y="430" font-size="15" fill="#5f6b66">Moto · Transport</text>
+  <text x="82" y="449" font-size="16" font-weight="700" fill="#0d1b16">1,500 RWF</text>
+
+  <rect x="68" y="600" width="184" height="34" rx="10" fill="#e8f5f0"/>
+  <text x="100" y="622" font-size="13" fill="#0f4c3a">Home</text>
+  <text x="152" y="622" font-size="13" fill="#0f4c3a">Expenses</text>
+  <text x="214" y="622" font-size="13" fill="#0f4c3a">Trends</text>
+
+  <text x="160" y="716" text-anchor="middle" font-size="20" font-weight="700" fill="#0d1b16">The student's phone</text>
+  <text x="160" y="742" text-anchor="middle" font-size="18" fill="#5f6b66">an installed app, not a website</text>
+
+  <!-- FIREBASE PANEL -->
+  <rect x="350" y="40" width="650" height="700" rx="24" fill="#fbfdfc" stroke="#0f4c3a" stroke-width="2.5"/>
+  <text x="378" y="86" font-size="15" font-weight="800" fill="#0f4c3a" letter-spacing="1.6">FIREBASE PROJECT</text>
+  <text x="378" y="120" font-size="26" font-weight="800" fill="#0d1b16">alu-expense-tracker</text>
+
+  <!-- Hosting -->
+  <rect x="378" y="144" width="594" height="132" rx="16" fill="#ffffff" stroke="#dbe6e0"/>
+  <circle cx="410" cy="182" r="10" fill="#e8f5f0"/>
+  <text x="434" y="190" font-size="27" font-weight="800" fill="#0d1b16">Hosting</text>
+  <text x="434" y="222" font-size="21" fill="#5f6b66">the app's files, served from anywhere</text>
+  <text x="434" y="252" font-size="18" fill="#0f4c3a" font-family="'JetBrains Mono',Consolas,monospace">alu-expense-tracker.web.app</text>
+
+  <!-- Auth -->
+  <rect x="378" y="292" width="594" height="132" rx="16" fill="#ffffff" stroke="#dbe6e0"/>
+  <circle cx="410" cy="330" r="10" fill="#e8f5f0"/>
+  <text x="434" y="338" font-size="27" font-weight="800" fill="#0d1b16">Authentication</text>
+  <text x="434" y="370" font-size="21" fill="#5f6b66">who is signed in — email and password</text>
+  <text x="434" y="400" font-size="18" fill="#8a968f">passwords are kept as hashes, never as text</text>
+
+  <!-- Firestore -->
+  <rect x="378" y="440" width="594" height="146" rx="16" fill="#e8f5f0" stroke="#0f4c3a" stroke-width="2"/>
+  <circle cx="410" cy="478" r="10" fill="#0f4c3a"/>
+  <text x="434" y="486" font-size="27" font-weight="800" fill="#0f4c3a">Firestore</text>
+  <text x="434" y="518" font-size="21" fill="#4b6a5f">the database: records, budget, profile</text>
+  <text x="434" y="548" font-size="18" fill="#4b6a5f" font-family="'JetBrains Mono',Consolas,monospace">one document per account</text>
+  <text x="434" y="572" font-size="18" fill="#4b6a5f" font-family="'JetBrains Mono',Consolas,monospace">users → (id) → data → store</text>
+
+  <text x="378" y="632" font-size="20" font-weight="700" fill="#0d1b16">No server of our own.</text>
+  <text x="378" y="660" font-size="19" fill="#5f6b66">Google runs all of it, on the free plan.</text>
+  <text x="378" y="686" font-size="19" fill="#5f6b66">Nothing needs to stay switched on.</text>
+  <text x="378" y="714" font-size="17" fill="#8a968f">Cloud Storage is not enabled — photos live inside Firestore.</text>
+
+  <!-- CONSOLE -->
+  <rect x="1050" y="60" width="310" height="250" rx="16" fill="#ffffff" stroke="#c9d6cf"/>
+  <text x="1074" y="96" font-size="14" font-weight="800" fill="#0f4c3a" letter-spacing="1.4">YOU, IN A BROWSER</text>
+  <text x="1074" y="130" font-size="25" font-weight="800" fill="#0d1b16">Firebase Console</text>
+  <text x="1074" y="164" font-size="20" fill="#5f6b66">See every account, every</text>
+  <text x="1074" y="190" font-size="20" fill="#5f6b66">record, every rule, and</text>
+  <text x="1074" y="216" font-size="20" fill="#5f6b66">today's usage.</text>
+  <text x="1074" y="252" font-size="18" fill="#8a968f">console.firebase.google.com</text>
+  <text x="1074" y="282" font-size="18" fill="#8a968f">Sign in as the project owner.</text>
+
+  <!-- INBOX -->
+  <rect x="1050" y="376" width="310" height="230" rx="16" fill="#fffaf0" stroke="#ecd9b0"/>
+  <text x="1074" y="412" font-size="14" font-weight="800" fill="#b45309" letter-spacing="1.4">OUTSIDE FIREBASE</text>
+  <text x="1074" y="446" font-size="25" font-weight="800" fill="#0d1b16">Your inbox</text>
+  <text x="1074" y="480" font-size="20" fill="#5f6b66">Bug reports arrive by email,</text>
+  <text x="1074" y="506" font-size="20" fill="#5f6b66">through a free service called</text>
+  <text x="1074" y="532" font-size="20" fill="#5f6b66">Web3Forms. Also saved in</text>
+  <text x="1074" y="558" font-size="20" fill="#5f6b66">Firestore as a backup.</text>
+  <text x="1074" y="592" font-size="18" fill="#8a968f">No address ships in the app.</text>
+
+  <!-- ARROWS -->
+  <line x1="284" y1="380" x2="342" y2="380" stroke="#0f4c3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="313" y="366" text-anchor="middle" font-size="15" fill="#0f4c3a">uses</text>
+
+  <line x1="1008" y1="230" x2="1042" y2="230" stroke="#0f4c3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1025" y="216" text-anchor="middle" font-size="14" fill="#0f4c3a">you</text>
+
+  <path d="M 250 676 C 300 744, 640 748, 900 748 L 1220 748 C 1240 748, 1240 730, 1240 708 L 1240 610"
+        fill="none" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M 1232 616 l 8 12 l 8 -12 z" fill="#b45309"/>
+  <text x="790" y="778" text-anchor="middle" font-size="16" fill="#b45309">a bug report by email, when the student taps Send</text>
+</svg>
+</body></html>

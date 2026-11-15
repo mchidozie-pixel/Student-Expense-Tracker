@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Student Expense Tracker — Mobile Installation Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --pine:#0f4c3a; --pine-deep:#0a3327; --mint:#e8f5f0; --mint-line:#c5e6d8;
+    --ink:#182420; --muted:#5f6d67; --line:#e4e9e6; --bg:#f5f7f6;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    color:var(--ink); background:#fff;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page{
+    width:210mm; height:297mm; padding:16mm 18mm 13mm; position:relative;
+    display:flex; flex-direction:column; page-break-after:always; overflow:hidden;
+  }
+  .page:last-child{ page-break-after:auto; }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12mm; }
+  .brand{ display:flex; align-items:center; gap:3.2mm; }
+  .brand img{ width:9mm; height:9mm; border-radius:2.4mm; }
+  .brand-name{ font-size:9.5pt; font-weight:700; letter-spacing:-.01em; }
+  .brand-sub{ font-size:7pt; color:var(--muted); margin-top:.6mm; }
+  .doc-tag{
+    font-size:6.8pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--pine); background:var(--mint); border:0.3mm solid var(--mint-line);
+    padding:1.6mm 3mm; border-radius:99mm;
+  }
+
+  .footer{
+    position:absolute; left:18mm; right:18mm; bottom:8mm; display:flex; justify-content:space-between;
+    font-size:7pt; color:#8a948f; border-top:0.25mm solid var(--line); padding-top:3mm;
+  }
+
+  /* ---------- cover ---------- */
+  .cover-title{
+    font-size:33pt; line-height:1.04; letter-spacing:-.035em; font-weight:800; margin:0 0 4mm;
+  }
+  .cover-title em{ font-style:normal; color:var(--pine); }
+  .cover-lead{ font-size:10.5pt; line-height:1.55; color:var(--muted); margin:0 0 7mm; max-width:128mm; }
+  .linkcard{
+    background:var(--pine); color:#fff; border-radius:5mm; padding:6mm 7mm; margin-bottom:4mm;
+    display:flex; align-items:center; justify-content:space-between; gap:6mm;
+  }
+  .linkcard .lbl{ font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:#bfe6d6; font-weight:700; margin-bottom:1.8mm; }
+  .linkcard .url{ font-family:"JetBrains Mono", monospace; font-size:12pt; font-weight:600; color:#fff; text-decoration:none; }
+  .linkcard .hint{ font-size:7.4pt; color:#a9d8c6; margin-top:1.6mm; }
+  .linkcard-icon{
+    width:15mm; height:15mm; border-radius:50%; background:#fff; flex:0 0 auto;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .linkcard-icon img{ width:9mm; height:9mm; }
+  .openbtn{
+    background:#fff; color:var(--pine); border-radius:99mm; padding:2.6mm 5mm;
+    font-size:8pt; font-weight:800; white-space:nowrap;
+  }
+  .cover-note{ font-size:8pt; color:var(--muted); margin-bottom:10mm; }
+
+  .cover-grid{
+    display:grid; grid-template-columns:1fr 52mm; gap:10mm; align-items:start;
+  }
+  .cover-hero{ margin:0; }
+  .cover-hero img{ width:100%; border-radius:4mm; border:0.3mm solid var(--line); box-shadow:0 3mm 9mm rgba(15,76,58,.14); }
+  .cover-hero figcaption{ font-size:6.6pt; color:#8a948f; margin-top:2.2mm; text-align:center; }
+
+  .summary{ display:flex; gap:5mm; margin:8mm 0 0; }
+  .summary div{ flex:1; border-left:0.6mm solid var(--mint-line); padding-left:3mm; }
+  .summary .n{ font-size:7pt; font-weight:800; color:var(--pine); letter-spacing:.12em; }
+  .summary .t{ font-size:8pt; line-height:1.45; margin-top:1mm; color:#3d4a45; }
+
+  .needband{
+    display:grid; grid-template-columns:1fr 32mm; gap:8mm; align-items:center;
+    margin-top:auto; background:var(--bg); border:0.3mm solid var(--line);
+    border-radius:4mm; padding:6mm 7mm;
+  }
+  .needband h4{ font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--pine); margin:0 0 2.4mm; }
+  .needband ul{ margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:2mm 7mm; }
+  .needband li{ font-size:8.6pt; color:#39463f; position:relative; padding-left:4.6mm; }
+  .needband li:before{
+    content:""; position:absolute; left:0; top:1.2mm; width:2.2mm; height:2.2mm; border-radius:50%;
+    background:var(--pine);
+  }
+  .qr{ text-align:center; }
+  .qr img{ width:26mm; height:26mm; display:block; margin:0 auto 2mm; }
+  .qr span{ font-size:6.4pt; color:var(--muted); line-height:1.35; display:block; }
+
+  /* ---------- steps ---------- */
+  h1.section{ font-size:19pt; letter-spacing:-.03em; font-weight:800; margin:0 0 2mm; }
+  .section-kicker{ font-size:7pt; letter-spacing:.16em; text-transform:uppercase; color:var(--pine); font-weight:800; margin-bottom:2.5mm; }
+  .section-lead{ font-size:9.5pt; color:var(--muted); line-height:1.5; margin:0 0 8mm; max-width:150mm; }
+
+  .step{ display:grid; grid-template-columns:1fr 38mm; gap:9mm; align-items:center; margin-bottom:7mm; }
+  .step:last-of-type{ margin-bottom:0; }
+  .step .copy{ }
+  .badge{
+    width:9mm; height:9mm; border-radius:50%; background:var(--pine); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:9.5pt; font-weight:800;
+    margin-bottom:3mm;
+  }
+  .step h2{ font-size:14pt; letter-spacing:-.02em; margin:0 0 2mm; font-weight:800; }
+  .step p{ font-size:9.2pt; line-height:1.58; color:#39463f; margin:0 0 2.4mm; }
+  .step .tip{ font-size:7.6pt; color:var(--muted); background:var(--bg); border-radius:2.4mm; padding:2.6mm 3mm; }
+  .shot{ margin:0; }
+  .shot img{ width:100%; border-radius:3.5mm; border:0.3mm solid var(--line); box-shadow:0 2.5mm 7mm rgba(15,76,58,.13); }
+  .shot figcaption{ font-size:6.6pt; color:#8a948f; margin-top:2.2mm; text-align:center; }
+
+  .callout{
+    background:var(--mint); border:0.3mm solid var(--mint-line); border-radius:4mm;
+    padding:5mm 6mm; font-size:8.6pt; line-height:1.55; color:#1d4136;
+  }
+  .callout b{ color:var(--pine); }
+
+  .checklist{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 6mm; margin-top:4mm; }
+  .checklist div{ font-size:8.6pt; line-height:1.5; padding-left:6.5mm; position:relative; color:#39463f; }
+  .checklist div:before{
+    content:""; position:absolute; left:0; top:1.1mm; width:3.6mm; height:3.6mm; border-radius:50%;
+    background:var(--pine);
+  }
+  .checklist div:after{ content:""; position:absolute; left:1.05mm; top:2.1mm; width:1.3mm; height:2mm; border:solid #fff; border-width:0 0.5mm 0.5mm 0; transform:rotate(40deg); }
+
+  .faq{ margin-top:2mm; }
+  .faq h3{ font-size:9.6pt; margin:0 0 1.2mm; font-weight:800; }
+  .faq p{ font-size:8.5pt; line-height:1.55; color:#4a564f; margin:0 0 4.5mm; }
+
+  .endnote{ margin-top:auto; margin-bottom:9mm; border-top:0.3mm solid var(--line); padding-top:5mm; font-size:8pt; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<section class="page">
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Student Expense Tracker logo" />
+      <div>
+        <div class="brand-name">Student Expense Tracker</div>
+        <div class="brand-sub">African Leadership University · Kigali</div>
+      </div>
+    </div>
+    <div class="doc-tag">Installation guide · Mobile</div>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <h1 class="cover-title">Put the tracker<br/>on your <em>phone</em>.</h1>
+      <p class="cover-lead">
+        Your expenses, budget and MoMo records in one app on your home screen.
+        No app store, no download fee — it installs straight from your browser in about a minute.
+      </p>
+
+      <div class="linkcard">
+        <div>
+          <div class="lbl">Open this link in your browser</div>
+          <a class="url" href="https://alu-expense-tracker.web.app">alu-expense-tracker.web.app</a>
+          <div class="hint">Type it exactly as shown, or tap it if you are reading this on your phone.</div>
+        </div>
+        <div class="linkcard-icon"><img src="assets/logo.png" alt="" /></div>
+      </div>
+      <p class="cover-note">You need the internet the first time. After that the app opens and works even when the signal drops.</p>
+    </div>
+
+    <figure class="cover-hero">
+      <img src="assets/step1-banner.png" alt="Install card shown at the top of the app" />
+      <figcaption>What you will see when the app loads</figcaption>
+    </figure>
+  </div>
+
+  <div class="summary">
+    <div><div class="n">01</div><div class="t">Open the link and the install card appears.</div></div>
+    <div><div class="n">02</div><div class="t">Tap Install — or use the browser menu if you missed it.</div></div>
+    <div><div class="n">03</div><div class="t">Open the new icon, sign in, and start recording.</div></div>
+  </div>
+
+  <div class="needband">
+    <div>
+      <h4>What you need</h4>
+      <ul>
+        <li>Your usual phone browser</li>
+        <li>The email you use for the tracker</li>
+        <li>About one minute</li>
+      </ul>
+    </div>
+    <div class="qr">
+      <img src="assets/qr.png" alt="QR code for alu-expense-tracker.web.app" />
+      <span>Scan to open<br/>the app</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Student Expense Tracker · Installation guide</span>
+    <span>1</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 — STEPS 1 & 2 ============ -->
+<section class="page">
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Student Expense Tracker logo" />
+      <div>
+        <div class="brand-name">Student Expense Tracker</div>
+        <div class="brand-sub">African Leadership University · Kigali</div>
+      </div>
+    </div>
+    <div class="doc-tag">Step by step</div>
+  </div>
+
+  <div class="section-kicker">Installing the app</div>
+  <h1 class="section">Two ways to get the install card</h1>
+  <p class="section-lead">Most people never need the second way — the card appears on its own. Use it only if the card closed before you could tap it.</p>
+
+  <div class="step">
+    <div class="copy">
+      <div class="badge">1</div>
+      <h2>Open the link and tap Install</h2>
+      <p>Open your browser and go to <b>alu-expense-tracker.web.app</b>. The app opens, and a small card appears at the top of the screen:</p>
+      <p><b>Install Student Expense Tracker</b> — tap <b>Install</b> on the card.</p>
+      <div class="tip">If you see the sign-in page instead of the card, look at the very top of the screen before scrolling — the card floats over the app.</div>
+    </div>
+    <figure class="shot">
+      <img src="assets/step1-banner.png" alt="Install card shown above the app sign-in page" />
+      <figcaption>The install card appears the moment the app loads</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="copy">
+      <div class="badge">2</div>
+      <h2>Missed the card? Use the menu</h2>
+      <p>No problem. Tap the menu button at the top-right of your browser — the three dots.</p>
+      <p>A list of options drops down. Tap <b>Install and create shortcut</b>.</p>
+      <div class="tip">On some phones the same option is called <b>Add to Home screen</b>. Both do the same thing.</div>
+    </div>
+    <figure class="shot">
+      <img src="assets/step2-menu.png" alt="Browser menu open with Install and create shortcut highlighted" />
+      <figcaption>Tap “Install and create shortcut”</figcaption>
+    </figure>
+  </div>
+
+  <div class="footer">
+    <span>Student Expense Tracker · Installation guide</span>
+    <span>2</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 — STEPS 3 & 4 ============ -->
+<section class="page">
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Student Expense Tracker logo" />
+      <div>
+        <div class="brand-name">Student Expense Tracker</div>
+        <div class="brand-sub">African Leadership University · Kigali</div>
+      </div>
+    </div>
+    <div class="doc-tag">Step by step</div>
+  </div>
+
+  <div class="section-kicker">Finishing the install</div>
+  <h1 class="section">Confirm, then open the app</h1>
+  <p class="section-lead">One confirmation window, and the tracker is on your home screen.</p>
+
+  <div class="step">
+    <div class="copy">
+      <div class="badge">3</div>
+      <h2>Tap Install in the window</h2>
+      <p>A window titled <b>Install app</b> opens with the app name and its address.</p>
+      <p>Tap <b>Install</b>. Choose <b>Install on device</b> if your phone offers you the choice between installing and creating a shortcut.</p>
+      <p>The window closes and the app appears on your home screen as a green circular icon named <b>ALU Expense</b>.</p>
+    </div>
+    <figure class="shot">
+      <img src="assets/step3-dialog.png" alt="Install app window with Cancel and Install buttons" />
+      <figcaption>Tap “Install” — not “Cancel”</figcaption>
+    </figure>
+  </div>
+
+  <div class="step" style="grid-template-columns:1fr; margin-top:8mm;">
+    <div class="copy">
+      <div class="badge">4</div>
+      <h2>Open ALU Expense and sign in</h2>
+      <p>Tap the new icon. It opens full screen, without the browser bar — that is how you know it is installed properly.</p>
+      <p>Sign in with the email and password you used on the website. New here? Tap <b>Create Account</b>, then set up your budget and record your first expense.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>From now on, use the icon — not the browser.</b> Your records are saved to your account, so the phone and your computer always show the same figures. Signing in on a second device brings both copies together instead of replacing one with the other.
+  </div>
+
+  <div class="footer">
+    <span>Student Expense Tracker · Installation guide</span>
+    <span>3</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 4 — TROUBLESHOOTING ============ -->
+<section class="page">
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Student Expense Tracker logo" />
+      <div>
+        <div class="brand-name">Student Expense Tracker</div>
+        <div class="brand-sub">African Leadership University · Kigali</div>
+      </div>
+    </div>
+    <div class="doc-tag">Help</div>
+  </div>
+
+  <div class="section-kicker">If something does not work</div>
+  <h1 class="section">Before you give up on it</h1>
+  <p class="section-lead">These four checks fix almost every failed install.</p>
+
+  <div class="checklist">
+    <div>Open the link in a real browser, not inside WhatsApp, Facebook or Instagram.</div>
+    <div>If you opened it inside another app, tap the menu there and choose “Open in browser”.</div>
+    <div>Wait for the page to finish loading — the install card appears a moment after the app itself.</div>
+    <div>Update your browser if the menu has no install option at all.</div>
+  </div>
+
+  <div class="faq" style="margin-top:10mm;">
+    <h3>“I installed it, but I still see the browser bar.”</h3>
+    <p>You added a shortcut instead of installing. Remove that shortcut, open the link again and choose <b>Install app</b>. The correct version opens edge-to-edge, with no address bar.</p>
+
+    <h3>“The card is gone and the menu has no install option.”</h3>
+    <p>You can keep using the tracker in the browser — nothing is lost. To install later, close the other browser tabs, open <b>alu-expense-tracker.web.app</b> again and wait a few seconds.</p>
+
+    <h3>“I forgot the password I used on the website.”</h3>
+    <p>On the sign-in screen tap <b>Forgot password?</b>, enter your email and a reset link is sent to you. The newest link is the one that works — asking for another cancels the previous one.</p>
+
+    <h3>“Does installing copy my records onto the phone only?”</h3>
+    <p>No. Your records live in your account, not on the phone. The app is only a window onto them, so nothing is lost if you change phones or reinstall.</p>
+  </div>
+
+  <div class="endnote">
+    Still stuck? Open the app, go to <b>Help</b> and send a report — it reaches the team with your app version and the page you were on.
+    <br/><br/>
+    Student Expense Tracker · alu-expense-tracker.web.app · Installation guide for mobile · 2026
+  </div>
+
+  <div class="footer">
+    <span>Student Expense Tracker · Installation guide</span>
+    <span>4</span>
+  </div>
+</section>
+
+</body>
+</html>
