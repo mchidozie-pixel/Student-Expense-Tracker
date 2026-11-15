@@ -28,3 +28,5 @@ skills-lock.json
 !/.env.example
 !/.firebaserc
 !/.github/
+bun.lock
+data/
