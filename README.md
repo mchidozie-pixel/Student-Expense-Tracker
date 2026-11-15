@@ -66,7 +66,7 @@ Nothing else is required. The app is pre-configured to talk to the project's Fir
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/miraclechidozie35-art/Student-Expense-Tracker.git
+   git clone https://github.com/mchidozie-pixel/Student-Expense-Tracker.git
    cd Student-Expense-Tracker
    ```
 
