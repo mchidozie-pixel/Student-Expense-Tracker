@@ -66,8 +66,8 @@ Nothing else is required. The app is pre-configured to talk to the project's Fir
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/student-expense-tracker.git
-   cd student-expense-tracker
+   git clone https://github.com/miraclechidozie35-art/Student-Expense-Tracker.git
+   cd Student-Expense-Tracker
    ```
 
 2. **Install dependencies**
