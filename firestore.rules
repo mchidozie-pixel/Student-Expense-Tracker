@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny: only the rules below grant access.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // Each student's private profile and expense data, keyed by Firebase UID.
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Budget, profile cache, categories, and transaction state.
+      match /data/store {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Optional granular transactions subcollection.
+      match /transactions/{transactionId} {
+        allow read, write: if isOwner(userId) && isValidId(transactionId);
+      }
+
+      // Optional granular categories subcollection.
+      match /categories/{categoryId} {
+        allow read, write: if isOwner(userId) && isValidId(categoryId);
+      }
+    }
+
+    // Bug reports: signed-in students may create a report carrying their own
+    // UID. Nobody can read, edit, or delete them from the app; the owner views
+    // them in the Firebase Console (admin access bypasses these rules).
+    match /feedback/{reportId} {
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 4000;
+      allow read, update, delete: if false;
+    }
+  }
+}

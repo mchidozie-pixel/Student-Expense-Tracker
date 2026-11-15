@@ -1,0 +1,12 @@
+{
+  "projectId": "alu-expense-tracker",
+  "appId": "1:107183030419:web:c5dba69809896e5a770d66",
+  "apiKey": "AIzaSyCOZscwkw8HDT-JQRkC74-iKFKwxFDv0gc",
+  "authDomain": "alu-expense-tracker.firebaseapp.com",
+  "firestoreDatabaseId": "default",
+  "storageBucket": "alu-expense-tracker.firebasestorage.app",
+  "messagingSenderId": "107183030419",
+  "measurementId": "",
+  "oAuthClientId": "",
+  "recaptchaSiteKey": ""
+}

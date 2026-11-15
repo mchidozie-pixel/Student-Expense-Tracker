@@ -1,0 +1,6 @@
+{
+  "name": "Student Expense Tracker",
+  "description": "Lightweight, privacy-first expense tracker and MoMo SMS parser designed for ALU Kigali students to manage monthly budgets and monitor spending pace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

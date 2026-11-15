@@ -1,0 +1,30 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Local secrets: never commit real keys
+.env*
+!.env.example
+
+# Private student data and imports — never publish
+data/user_database.json
+cookies.txt
+private_files/
+*.zip
+
+# Tooling caches that are not part of the app
+.firebase/
+**/.qoder-office-docx-locks/
+scripts/generate_png_icons.py
+
+# AI assistant and editor folders (not part of the project)
+agent/
+skills/
+skills-lock.json
+.*
+!/.gitignore
+!/.env.example
+!/.firebaserc
+!/.github/

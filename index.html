@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Expense Tracker</title>
+    <meta name="description" content="Lightweight, privacy-first expense tracker and MoMo SMS parser designed for ALU Kigali students to manage monthly budgets and monitor spending pace." />
+    <meta property="og:title" content="Student Expense Tracker" />
+    <meta property="og:description" content="Lightweight, privacy-first expense tracker and MoMo SMS parser designed for ALU Kigali students to manage monthly budgets and monitor spending pace." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0f4c3a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ALU Expense" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        // Allow real Vite HMR when running on a local dev server (localhost preview).
+        // The AI Studio iframe workaround below only applies on hosted domains.
+        var isLocalPreview = typeof location !== 'undefined' &&
+          (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname === '[::1]');
+        if (isLocalPreview) return;
+
+        // Neutralize Vite HMR WebSocket errors in AI Studio iframe environment
+        if (typeof window !== 'undefined' && window.WebSocket) {
+          const NativeWebSocket = window.WebSocket;
+          function ViteSafeWebSocket(url, protocols) {
+            const isVite = (typeof protocols === 'string' && protocols.includes('vite')) ||
+              (Array.isArray(protocols) && protocols.some(p => typeof p === 'string' && p.includes('vite'))) ||
+              (typeof url === 'string' && (url.includes('vite') || url.includes('@vite')));
+            
+            if (isVite) {
+              const listeners = { open: [], close: [], error: [], message: [] };
+              const mockWs = {
+                url: url,
+                protocol: Array.isArray(protocols) ? protocols[0] : (protocols || ''),
+                readyState: 1, // OPEN
+                send: function() {},
+                close: function() {},
+                addEventListener: function(event, handler) {
+                  if (listeners[event]) listeners[event].push(handler);
+                  if (event === 'open') {
+                    setTimeout(function() { handler({ type: 'open' }); }, 0);
+                  }
+                },
+                removeEventListener: function(event, handler) {
+                  if (listeners[event]) {
+                    listeners[event] = listeners[event].filter(h => h !== handler);
+                  }
+                },
+                dispatchEvent: function() { return true; },
+                onopen: null,
+                onclose: null,
+                onerror: null,
+                onmessage: null
+              };
+              setTimeout(function() {
+                if (typeof mockWs.onopen === 'function') mockWs.onopen({ type: 'open' });
+              }, 0);
+              return mockWs;
+            }
+            return new NativeWebSocket(url, protocols);
+          }
+          ViteSafeWebSocket.prototype = NativeWebSocket.prototype;
+          ViteSafeWebSocket.CONNECTING = NativeWebSocket.CONNECTING;
+          ViteSafeWebSocket.OPEN = NativeWebSocket.OPEN;
+          ViteSafeWebSocket.CLOSING = NativeWebSocket.CLOSING;
+          ViteSafeWebSocket.CLOSED = NativeWebSocket.CLOSED;
+          window.WebSocket = ViteSafeWebSocket;
+        }
+
+        // Suppress any stray console error referencing Vite WebSocket closure
+        const origConsoleError = console.error;
+        console.error = function() {
+          for (let i = 0; i < arguments.length; i++) {
+            const arg = arguments[i];
+            if (typeof arg === 'string' && (arg.includes('WebSocket') || arg.includes('[vite]')) && arg.includes('closed without opened')) {
+              return;
+            }
+            if (arg && arg.message && typeof arg.message === 'string' && arg.message.includes('WebSocket closed without opened')) {
+              return;
+            }
+          }
+          return origConsoleError.apply(console, arguments);
+        };
+      })();
+    </script>
+  </head>
+  <body class="bg-[#f5f7f6] text-gray-900 antialiased selection:bg-[#0f4c3a]/15 selection:text-[#0f4c3a] min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

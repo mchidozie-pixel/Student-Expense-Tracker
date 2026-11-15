@@ -1,0 +1,151 @@
+{
+  "entities": {
+    "UserAccount": {
+      "title": "UserAccount",
+      "description": "Student account profile and identity information",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Unique identifier of the user",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "description": "Full name of the student",
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the student",
+          "maxLength": 120
+        },
+        "studentId": {
+          "type": "string",
+          "description": "Student registration ID (e.g. ALU-KGL-2026)",
+          "maxLength": 64
+        },
+        "university": {
+          "type": "string",
+          "description": "University name",
+          "maxLength": 120
+        },
+        "avatarUrl": {
+          "type": "string",
+          "description": "Public URL of the profile avatar in Firebase Storage",
+          "maxLength": 2048
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of account creation"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last account update"
+        }
+      },
+      "required": ["userId", "name", "email"]
+    },
+    "UserStore": {
+      "title": "UserStore",
+      "description": "Complete user records store including budget, transactions, and custom categories",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner user ID",
+          "maxLength": 128
+        },
+        "email": {
+          "type": "string",
+          "description": "Owner email address",
+          "maxLength": 120
+        },
+        "profile": {
+          "type": "object",
+          "description": "Student profile configuration"
+        },
+        "budget": {
+          "type": "object",
+          "description": "Budget settings and monthly limits"
+        },
+        "transactions": {
+          "type": "array",
+          "description": "List of student expense transactions"
+        },
+        "categories": {
+          "type": "array",
+          "description": "List of custom expense categories"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp of last modification"
+        }
+      },
+      "required": ["userId", "email"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "An individual expense or transaction record",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique transaction ID",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner student user ID",
+          "maxLength": 128
+        },
+        "amount": {
+          "type": "number",
+          "description": "Transaction amount in local currency"
+        },
+        "category": {
+          "type": "string",
+          "description": "Expense category name or ID",
+          "maxLength": 64
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional memo or description",
+          "maxLength": 256
+        },
+        "date": {
+          "type": "string",
+          "description": "Date of transaction"
+        },
+        "source": {
+          "type": "string",
+          "description": "Payment source: cash, momo_sms, card",
+          "maxLength": 32
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": ["id", "userId", "amount", "category", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserAccount",
+      "description": "Student user profile and metadata document"
+    },
+    "/users/{userId}/data/store": {
+      "schema": "UserStore",
+      "description": "Synced student budget, profile, and expense records"
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "Individual transaction documents for granular synchronization"
+    }
+  }
+}
