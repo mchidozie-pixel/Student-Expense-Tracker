@@ -209,7 +209,7 @@ The data model expects only two collections (`users/...` and `feedback`), so no 
 ├── firebase.json              # Hosting, auth and Firestore deploy configuration
 ├── vite.config.ts             # Build, PWA manifest and service-worker strategy
 ├── server.ts                  # Local dev server (Express + Vite middleware)
-└── docs/                      # Technical handbook and installation guide
+└── docs/                      # SRS, technical handbook, video script, installation guide
 ```
 
 `npm run dev` uses `server.ts` only as a convenience: it serves the Vite app on one port. The deployed site is pure static hosting.
@@ -255,8 +255,9 @@ Each record has an `id`, `amount`, `category`, `note`, `date` (`YYYY-MM-DD`), `t
 
 ## Documentation
 
+- `docs/srs/Student-Expense-Tracker-SRS-v1.1.docx` — Software Requirements Specification, version 1.1: the formative specification (sections 1–6, FR 1–FR 12) with Part C added for build 1.9.1 — FR 13–FR 20, NFR 9–NFR 15, amendments to FR 1.1 and FR 1.3, actors and trust boundaries, data rules, traceability matrix and acceptance criteria.
+- `docs/video/Video-Script.pdf` — the timed script for the five-to-ten-minute demonstration. `docs/video/video-script.html` is the same script in a browser.
 - `docs/handbook/Technical-Handbook.pdf` — 22-page technical handbook: front-end decisions, backend tour, data model, security rules, full release history, publishing steps.
-- `docs/handbook/handbook.html` — the same handbook in a browser.
 - `docs/install-guide/install-guide.html` — how to install the app on a phone.
 
 ---

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo Video Script — Student Expense Tracker</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 15mm 15mm; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Segoe UI", Arial, sans-serif; color:#12211b; font-size:9.4pt; line-height:1.5; }
+  .top { display:flex; justify-content:space-between; border-bottom:.6pt solid #cfdcd4; padding-bottom:2mm; margin-bottom:5mm; font-size:7pt; letter-spacing:.1em; text-transform:uppercase; color:#5d6f67; font-weight:700; }
+  h1 { font-size:22pt; color:#0f3529; margin:0 0 1mm; letter-spacing:-.01em; }
+  .sub { color:#4a5b53; font-size:10pt; margin:0 0 5mm; }
+  h2 { font-size:12pt; color:#0f4c3a; margin:6mm 0 2mm; border-bottom:.5pt solid #dbe6e0; padding-bottom:1.2mm; page-break-after:avoid; }
+  h3 { font-size:9.8pt; color:#163a2e; margin:3.6mm 0 1.4mm; page-break-after:avoid; }
+  p { margin:0 0 2mm; }
+  ul, ol { margin:0 0 2.4mm; padding-left:4.8mm; }
+  li { margin-bottom:.8mm; }
+  .seg { border:.4pt solid #e0e8e4; border-radius:2mm; margin:0 0 3mm; overflow:hidden; page-break-inside:avoid; }
+  .seg .head { display:flex; justify-content:space-between; align-items:center; background:#f3f8f5; padding:1.7mm 3mm; border-bottom:.4pt solid #e0e8e4; }
+  .seg .head .t { font-weight:800; font-size:9pt; color:#0f4c3a; }
+  .seg .head .time { font-family:Consolas,monospace; font-size:8pt; color:#0f4c3a; background:#e2efe8; padding:.5mm 2mm; border-radius:1.2mm; }
+  .seg .body { padding:2.4mm 3mm 2.6mm; }
+  .say { border-left:1mm solid #0f4c3a; padding-left:3mm; margin:0 0 2.2mm; color:#1c332a; }
+  .say > b:first-child { font-size:6.6pt; letter-spacing:.09em; text-transform:uppercase; color:#0f4c3a; display:block; margin-bottom:.6mm; }
+  .say b, .do b { font-weight:700; }
+  .do > b:first-child { color:#8a5a12; font-size:6.6pt; letter-spacing:.08em; text-transform:uppercase; display:block; margin-bottom:.5mm; }
+  .do { font-size:8.2pt; color:#4f6159; background:#f8faf9; border-radius:1.4mm; padding:2mm 2.6mm; margin:0; }
+  .tip { background:#fdf6ec; border-left:1mm solid #b45309; padding:2.4mm 3mm; border-radius:1.2mm; font-size:8.4pt; margin:2mm 0 3mm; color:#5c3a10; }
+  .ok { background:#f0f7f3; border-left:1mm solid #0f4c3a; padding:2.4mm 3mm; border-radius:1.2mm; font-size:8.4pt; margin:2mm 0 3mm; color:#2a463b; }
+  .code { background:#0f3529; color:#e4f2eb; border-radius:1.8mm; padding:2.6mm 3.4mm; font-family:Consolas,monospace; font-size:8pt; line-height:1.5; margin:1.5mm 0 2.5mm; }
+  table { width:100%; border-collapse:collapse; margin:1.5mm 0 3mm; }
+  th { text-align:left; font-size:6.8pt; text-transform:uppercase; letter-spacing:.07em; color:#5d6f67; border-bottom:.5pt solid #cfdcd4; padding:1.2mm 2mm 1.2mm 0; }
+  td { font-size:8.2pt; padding:1.3mm 2mm 1.3mm 0; border-bottom:.35pt solid #e7efeb; vertical-align:top; }
+  tr { page-break-inside:avoid; }
+  .small { font-size:7.6pt; color:#6c7d75; }
+  ol.roomy li { margin-bottom:1.8mm; }
+  .end { margin-top:5mm; border-top:.5pt solid #cfdcd4; padding-top:2.4mm; font-size:7.4pt; color:#7b8a83; display:flex; justify-content:space-between; }
+  .kicker { font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:#0f4c3a; font-weight:800; }
+</style>
+</head>
+<body>
+
+<div class="top"><span>Student Expense Tracker · Demo video script</span><span>v1.9.1 · 15 November 2026</span></div>
+
+<h1>The 9-minute demo</h1>
+<p class="sub">A spoken script and a click sheet. Read the green lines out loud; perform the amber lines on screen. Total 9:20, inside the 5–10 minute limit with room for a slip.</p>
+
+<div class="ok"><b>Before you press record</b><br>
+Prepare a <b>demo account</b> — never your real one. Sign up with a fresh email and a demo-only password, set the monthly cap to 100,000 RWF, cycle start day 1, threshold 80%. Add about eight records: food, transport, a 5,000 RWF data bundle three times in different weeks (so recurring detection has something to find), and one MoMo import. Then: light theme, browser zoom 100%, bookmarks bar hidden (Ctrl+Shift+B), notifications off, one clean tab. Have the second device signed in to the same demo account before recording.</div>
+
+<h2>The opening</h2>
+<p>Two versions — pick the one that sounds like you. Look at the camera for the first sentence, then turn to the screen.</p>
+
+<div class="seg"><div class="head"><span class="t">Opening A · formal</span><span class="time">0:00–0:20</span></div><div class="body">
+<div class="say"><b>Say</b>“Good morning. My name is Miracle Chidozie, and this is Student Expense Tracker, my final project for the software development course at ALU. In the next nine minutes I’ll explain the problem it solves, show the working system, and walk through how it grew from version 1.1 to 1.9.1.”</div>
+<div class="do"><b>Do</b>Face camera, then switch to the browser with the app already open on the Home screen.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">Opening B · relaxed</span><span class="time">0:00–0:20</span></div><div class="body">
+<div class="say"><b>Say</b>“Hi, I’m Miracle Chidozie. This is Student Expense Tracker — an app I built for students at ALU to stop losing track of their money. I’ll show you the problem, the solution, and the app running live, then how it changed across nine versions.”</div>
+<div class="do"><b>Do</b>Same: camera for one sentence, then screen.</div>
+</div></div>
+
+<div class="tip"><b>Delivery:</b> about 135 words a minute. Speak to one person, not an audience. Pause for one full second between sections — it gives you clean cut points in editing and makes you sound calm.</div>
+
+<h2>The script</h2>
+
+<div class="seg"><div class="head"><span class="t">1 · What the system is</span><span class="time">0:20–1:05</span></div><div class="body">
+<div class="say"><b>Say</b>“Student Expense Tracker is an installable web application for African Leadership University students in Kigali. It records daily spending, imports transactions from Mobile Money SMS messages, and keeps a monthly budget visible. The front end is React with TypeScript; the back end is Firebase — Authentication for accounts, Firestore for the data. The same build runs on a laptop and on a phone, and it keeps working when the internet drops.”</div>
+<div class="do"><b>Do</b>Slowly move the cursor across the Home screen: budget card, spent, remaining, recent records. Don’t click yet.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">2 · The problem</span><span class="time">1:05–1:55</span></div><div class="body">
+<div class="say"><b>Say</b>“Here’s the problem. A student spends money all day — a moto to campus, lunch, a data bundle — and almost none of it gets written down. It lives in a WhatsApp message, a note, or memory. MoMo confirms every payment by SMS, but nobody goes back and adds those messages up. By the third week of the month the money is gone, and the student cannot say where it went. That is not really a budgeting problem. It is a record-keeping problem.”</div>
+<div class="do"><b>Do</b>Stay on Home; gesture at the empty or partial list. No typing.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">3 · Why it matters</span><span class="time">1:55–2:30</span></div><div class="body">
+<div class="say"><b>Say</b>“It matters because without a record you cannot plan. You cannot tell whether transport or food is the real cost, you cannot compare this month with last month, and you cannot see a bad week coming until it has already happened. For a student living on a fixed allowance, that is the difference between finishing the month comfortably and borrowing in the last week.”</div>
+<div class="do"><b>Do</b>Still Home. Keep it conversational; this is the part that earns the problem-statement marks.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">4 · The proposed solution</span><span class="time">2:30–3:10</span></div><div class="body">
+<div class="say"><b>Say</b>“The solution is one place to record spending in seconds, with a budget that updates itself. Five things make it work. Record an expense in under ten seconds. Paste a MoMo SMS and the app reads the amount, the merchant and the date. Set a monthly cap and see what is left and what a safe daily spend looks like. See where the money went through categories, a trend chart and recurring expenses. And have all of it sync to your account on any device, even offline.”</div>
+<div class="do"><b>Do</b>Count the five points on your fingers or with the cursor, moving across the Home cards.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">5 · Sign in</span><span class="time">3:10–3:30</span></div><div class="body">
+<div class="say"><b>Say</b>“I’ll sign in to a demo account I prepared, so no real student data appears in this video.”</div>
+<div class="do"><b>Do</b>Sign out from Settings, then sign in with the demo email. Do not show the password field for long — type it, don’t read it aloud.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">6 · Record an expense</span><span class="time">3:30–4:15</span></div><div class="body">
+<div class="say"><b>Say</b>“This is the main action. I tap Record New Expense. I type the amount — and notice the comma: 2,500 is accepted. I choose Food, add the note ‘Lunch at campus’, and save. The app only says saved once the record has actually reached my account. There it is at the top of the list, and the budget has already moved.”</div>
+<div class="do"><b>Do</b>Home → Record New Expense → amount <b>2,500</b> → category Food → note “Lunch at campus” → Save. Point at the confirmation message and the new row.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">7 · Edit and delete</span><span class="time">4:15–4:45</span></div><div class="body">
+<div class="say"><b>Say</b>“Records can be corrected. I open this one, change the note, and save. And when I delete a record, it disappears here — and stays deleted on every device, because the app keeps a marker that stops an older copy from bringing it back.”</div>
+<div class="do"><b>Do</b>Expenses tab → open the record just added → change note → save. Open a different test record → Delete → confirm. Keep it quick.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">8 · MoMo import</span><span class="time">4:45–5:25</span></div><div class="body">
+<div class="say"><b>Say</b>“Now the part that saves the most time. I tap MoMo and paste a confirmation message. The app reads it on the device — no external service — and fills in three thousand RWF, the merchant YEGO, and today’s date. It even suggests Transport. I check it, and save. What used to be manual typing is now one paste.”</div>
+<div class="do"><b>Do</b>Tap <b>MoMo</b> in the navigation → paste the sample below → show the parsed fields → Save.</div>
+<div class="code">You have made a payment of 3,000 RWF to YEGO RWANDA LTD on 15/11/2026 at 12:45. Financial TxId: 1234567890. Your new balance is 12,345 RWF.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">9 · Budget and pace</span><span class="time">5:25–5:50</span></div><div class="body">
+<div class="say"><b>Say</b>“Back on Home, the budget does the thinking. My cap is one hundred thousand francs. The app shows what I have spent, what is left, how many days remain in the cycle, and what a safe daily allowance looks like from here. When I cross the warning threshold, it tells me.”</div>
+<div class="do"><b>Do</b>Home. Point at the remaining amount, the days-left line and the pace message.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">10 · Analytics and recurring</span><span class="time">5:50–6:25</span></div><div class="body">
+<div class="say"><b>Say</b>“Analytics answers ‘where did it go’. The chart shows the trend across the cycle, and the breakdown ranks categories. And back on Home, the app detects repeated costs — it groups similar payments, like my data bundle, and estimates what they cost me every month. That is money I was not counting before.”</div>
+<div class="do"><b>Do</b>Analytics tab → show the chart and the category breakdown → return Home → point at the card reading “Detected Recurring Commitments” → tap <b>View all</b> to open the drawer → show the data-bundle cluster and its monthly estimate.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">11 · Search and export</span><span class="time">6:25–6:45</span></div><div class="body">
+<div class="say"><b>Say</b>“On the Expenses screen I can search or filter, then take the records out of the app — a CSV for a spreadsheet, or a clean printed statement.”</div>
+<div class="do"><b>Do</b>Expenses → type a search or pick a category → tap the download icon → show the export dialog with the record count → close it. Don’t print.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">12 · Settings</span><span class="time">6:45–7:25</span></div><div class="body">
+<div class="say"><b>Say</b>“Settings is where the account lives. My profile and photo, the monthly budget, categories — I can add my own, like Airtime — the theme, the version and the update check, the help guide, and the bug report form, which saves straight to the database and can also email the owner. There is even a trimester wipe for starting a new term clean.”</div>
+<div class="do"><b>Do</b>Settings → Profile (don’t change), Budget (don’t save), Categories (show Add New Category, cancel), scroll to the version card and tap Check for New Updates, open Help &amp; Support → show the report form, close. Skip the wipe.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">13 · Second device</span><span class="time">7:25–7:55</span></div><div class="body">
+<div class="say"><b>Say</b>“This is the same account, open on a second device. The lunch record I added a few minutes ago is already here, with the updated budget. That is the Firebase back end doing its job: one account, the same data everywhere, merged by record instead of overwritten.”</div>
+<div class="do"><b>Do</b>Cut to the phone or second browser window, signed in to the demo account. Scroll to the record. If it is not there yet, refresh once — the app retries on reconnect and every twenty seconds.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">14 · Offline (optional, 25s)</span><span class="time">7:55–8:20</span></div><div class="body">
+<div class="say"><b>Say</b>“One more thing: I turn the network off, record an expense, and the app does not pretend it saved. It says the record is on this phone and will sync later. When the connection returns, it sends it by itself.”</div>
+<div class="do"><b>Do</b>Airplane mode → record 500 RWF → show the queued message → network on → wait for the record to appear. If it doesn’t sync within ten seconds, say “it retries every twenty seconds” and move on.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">15 · The version story</span><span class="time">8:20–9:05</span></div><div class="body">
+<div class="say"><b>Say</b>“This did not arrive finished. Version 1.1 was the foundation: real accounts through Firebase, records and budgets synced online, installable offline. 1.2 hardened it — Kigali dates, incoming-money SMS rejected instead of logged as spending. 1.3 to 1.5 made updates invisible: new builds apply themselves, and password reset went back to Firebase’s reliable flow. 1.6 and 1.7 fixed recovery properly: unknown emails are refused before anything is sent, and resend is locked for two minutes so the link in your inbox is not cancelled. 1.8 solved photos — phone pictures are shrunk and verified, so the new photo replaces the old one. 1.9 is the big one: records save one by one, deletes leave a marker, and two devices merge instead of overwriting. That is what stopped records disappearing. And 1.9.1 fixed the last input problems: the keyboard no longer covers the save button, 2,500 with a comma is accepted, and the app only says saved when the record actually arrived.”</div>
+<div class="do"><b>Do</b>Settings → the version card, showing 1.9.1 and the release notes. Scroll slowly while speaking; do not read every line.</div>
+</div></div>
+
+<div class="seg"><div class="head"><span class="t">16 · Close</span><span class="time">9:05–9:25</span></div><div class="body">
+<div class="say"><b>Say</b>“That is Student Expense Tracker at version 1.9.1. It is live at alu-expense-tracker dot web dot app, the code and every setup step are in the public GitHub repository, and the SRS describes each requirement you just saw. Thank you for watching.”</div>
+<div class="do"><b>Do</b>Return to the Home screen and stop recording on the last word.</div>
+</div></div>
+
+<h2>If something breaks</h2>
+<table>
+  <tr><th style="width:42mm">What happens</th><th>What to say, without stopping</th></tr>
+  <tr><td>Save shows “saved on this phone”</td><td>“The connection dropped, so the app is holding the record on the device — that is the offline design — and it will sync by itself.”</td></tr>
+  <tr><td>Second device is behind</td><td>“It refreshes on open and retries every twenty seconds; here it is after a refresh.”</td></tr>
+  <tr><td>The SMS does not parse</td><td>Paste the sample in this document again, and say “the parser reports confidence, so unusual formats can still be corrected.”</td></tr>
+  <tr><td>A click lands on the wrong screen</td><td>Pause, go back, continue. Cut the pause in editing; nobody sees it.</td></tr>
+</table>
+
+<h2 id="recording">Recording and uploading</h2>
+<ol class="roomy">
+  <li><b>Record the screen</b> with Xbox Game Bar (Win + G) or OBS at 1080p, microphone on. Phone clips: use the phone’s built-in screen recorder, or film the phone over your shoulder for the second-device shot.</li>
+  <li><b>Record in four takes</b> — opening, problem and solution, demo, version story and close. Cut between them; the video still feels like one piece.</li>
+  <li><b>Edit</b> in Clipchamp (already on Windows): trim dead air, no music, no zoom effects. Export MP4, 1080p.</li>
+  <li><b>Upload</b> to YouTube as <b>Unlisted</b> — not Private. Or put the MP4 in Drive and set “Anyone with the link — Viewer”.</li>
+  <li><b>Test the link in an incognito window</b> before pasting it anywhere. Private videos are the most common zero in this assignment.</li>
+  <li><b>Paste the link</b> into the submission document and into the Google Doc, then submit the Doc on Canvas.</li>
+</ol>
+
+<div class="tip"><b>The one rule:</b> the demo account, not your account. Everything on screen becomes public to the class and the grader — email, name, expenses, photo.</div>
+
+<div class="end"><span>Student Expense Tracker · video script · v1.9.1</span><span>Miracle Chidozie · ALU</span></div>
+
+</body>
+</html>
