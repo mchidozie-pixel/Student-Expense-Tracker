@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
+    "test": "tsx --test tests/momoParser.test.ts",
     "firebase:login": "npx firebase-tools login",
     "deploy:hosting": "npm run build && npx firebase-tools deploy --only hosting",
     "deploy:rules": "npx firebase-tools deploy --only auth,firestore:rules,storage",
